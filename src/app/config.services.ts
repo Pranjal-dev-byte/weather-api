@@ -10,7 +10,7 @@ export class ConfigService {
   apiKey = '89fec8f87ef7f40e00a201632007c066';
 
   private ulrWeather;
-  getData(loc = 'New York') {
+  getData(loc) {
     this.ulrWeather = `${this.url}?access_key=${this.apiKey}&query=${loc}`;
     return this.http.get(this.ulrWeather);
   }

@@ -1,1 +1,11 @@
-<p>loc-search works!</p>
+<div class="">
+  <label for="location"></label>
+  <input type="text" id="location" placeholder="New York" [(ngModel)]="loc" />
+  <button (click)="apiCall(loc)">Search</button>
+</div>
+<p *ngIf="dataObj">
+  The temperature is {{ dataObj.current.temperature }} C along with
+  {{ dataObj.current.humidity }} % humidity, wind speed
+  {{ dataObj.current.wind_speed }} km/h and direction
+  {{ dataObj.current.wind_dir }}
+</p>
