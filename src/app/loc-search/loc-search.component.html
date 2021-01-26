@@ -1,11 +1,27 @@
-<div class="">
-  <label for="location"></label>
-  <input type="text" id="location" placeholder="New York" [(ngModel)]="loc" />
-  <button (click)="apiCall(loc)">Search</button>
+<main class="main">
+  <div class="main__search--wrap">
+    <input
+      type="text"
+      id="location"
+      placeholder="New York"
+      [(ngModel)]="loc"
+      class="main__input"
+    />
+    <button class="main__find" (click)="apiCall(loc)">Find</button>
+  </div>
+</main>
+<div class="mian__section--wrap">
+  <div *ngIf="dataObj" class="main__section">
+    <div class="main__date"></div>
+    <div class="main__place"></div>
+    <div class="main__temp">{{ dataObj.current.temperature }}C</div>
+    <div class="main__misc"></div>
+  </div>
+  <p class="main__info">
+    The temperature is C along with
+    {{ dataObj.current.humidity }} % humidity, wind speed
+    {{ dataObj.current.wind_speed }}
+    km/h and direction
+    {{ dataObj.current.wind_dir }}
+  </p>
 </div>
-<p *ngIf="dataObj">
-  The temperature is {{ dataObj.current.temperature }} C along with
-  {{ dataObj.current.humidity }} % humidity, wind speed
-  {{ dataObj.current.wind_speed }} km/h and direction
-  {{ dataObj.current.wind_dir }}
-</p>

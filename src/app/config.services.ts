@@ -15,7 +15,3 @@ export class ConfigService {
     return this.http.get(this.ulrWeather);
   }
 }
-
-// http://api.weatherstack.com/current
-//     ? access_key = YOUR_ACCESS_KEY
-//     & query = New York

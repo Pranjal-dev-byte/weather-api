@@ -16,22 +16,22 @@ export class LocSearchComponent implements OnInit {
     this.apiCall();
   }
   apiCall(loc = 'New York') {
-    this.dataService.getData(loc).subscribe((data: any) => {
-      this.dataObj = data;
-      console.log(this.dataObj.current);
-      this.dir = '';
-      for (let char of data.current.wind_dir) {
-        if (char === 'W') {
-          this.dir += 'West';
-        } else if (char === 'E') {
-          this.dir += 'East';
-        } else if (char === 'N') {
-          this.dir += 'North';
-        } else {
-          this.dir += 'South';
-        }
-      }
-      this.dataObj.current.wind_dir = this.dir;
-    });
+    // this.dataService.getData(loc).subscribe((data: any) => {
+    //   this.dataObj = data;
+    //   console.log(this.dataObj);
+    //   this.dir = '';
+    //   for (let char of data.current.wind_dir) {
+    //     if (char === 'W') {
+    //       this.dir += 'West';
+    //     } else if (char === 'E') {
+    //       this.dir += 'East';
+    //     } else if (char === 'N') {
+    //       this.dir += 'North';
+    //     } else {
+    //       this.dir += 'South';
+    //     }
+    //   }
+    //   this.dataObj.current.wind_dir = this.dir;
+    // });
   }
 }

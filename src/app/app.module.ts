@@ -5,9 +5,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { LocSearchComponent } from './loc-search/loc-search.component';
 import { FormsModule } from '@angular/forms';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
-  declarations: [AppComponent, LocSearchComponent],
+  declarations: [AppComponent, LocSearchComponent, NavbarComponent],
   imports: [
     BrowserModule,
     FormsModule,
